@@ -43,7 +43,7 @@ def get_long_tune(CP, params):
     from openpilot.common.params import Params
     if Params().get_bool("TSS2-Smooth"):
       kiBP = [0., 3., 5., 10., 25., 36.]
-      kiV = [0.46, 0.46, 0.31, 0.27, 0.245, 0.24]
+      kiV = [0.46, 0.46, 0.31, 0.22, 0.20, 0.19]
     else:
       kiBP = [2., 5.]
       kiV = [0.5, 0.25]
