@@ -142,3 +142,8 @@ def _initialize_toyota(CP: structs.CarParams, CP_SP: structs.CarParamsSP, params
       CP.alphaLongitudinalAvailable = False
       CP.openpilotLongitudinalControl = False
       CP.safetyConfigs[0].safetyParam |= ToyotaSafetyFlags.STOCK_LONGITUDINAL.value
+
+    tss2_smooth = int(params_dict.get("TSS2-Smooth", 0)) == 1
+    if tss2_smooth:
+      CP_SP.flags |= ToyotaFlagsSP.TSS2_SMOOTH.value
+      CP.stoppingDecelRate = 0.05
